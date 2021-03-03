@@ -12,18 +12,19 @@ public class Reader {
     }
 
     void rateBook(Book book){
+        int range = 5;
         int rate = book.title.length() + book.author.length() - book.number + book.pageCount;
 
         if (book.title.isEmpty())
-            rate -= random.nextInt(5);
+            rate -= random.nextInt(range);
         if (book.author.isEmpty())
-            rate -= random.nextInt(5);
+            rate -= random.nextInt(range);
         if (book.number == 0)
-            rate -= random.nextInt(5);
+            rate -= random.nextInt(range);
         if (book.pageCount == 0)
-            rate -= random.nextInt(5);
+            rate -= random.nextInt(range);
 
-        System.out.println("Оценка для книги \"" + book.title + "\": " + rate);
+        System.out.println("Оценка для книги \'" + book.title + "\': " + rate);
     }
 
 }
